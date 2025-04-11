@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>MBTI 簡易互動測驗</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+      padding: 60px 20px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      margin: 20px auto;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 40px;
+      display: none;
+      font-size: 1.1em;
+    }
+
+    .link-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .link-btn:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>你的 MBTI 是哪一型？</h1>
+  <div class="question">當你參加一個派對時，你比較傾向？</div>
+
+  <div class="btn-group">
+    <button onclick="showResult('E')">主動社交（E）</button>
+    <button onclick="showResult('I')">靜靜觀察（I）</button>
+  </div>
+
+  <div class="result" id="resultBox">
+    <p>你可能偏向 <strong id="resultType"></strong> 型人格！</p>
+    <a href="test.htm" class="link-btn">深入了解 →</a>
+  </div>
+
+  <script>
+    function showResult(type) {
+      document.getElementById("resultType").innerText = type === 'E' ? "外向型（E）" : "內向型（I）";
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
